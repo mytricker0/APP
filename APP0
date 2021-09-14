@@ -1,0 +1,40 @@
+while get_y() != get_target_y():
+    if get_y()>get_target_y():
+        while get_direction() != NORTH:
+            turn_left()
+    else:
+        while get_direction() != SOUTH:
+            turn_left()
+
+        #set direction
+    if is_in_front_of_enemy() or not can_move():
+        turn_left()
+        move()
+        turn_right()
+        move()
+        move()
+        turn_right()
+        move()
+        turn_left()
+    if can_move() and not in_front_of_enemy():
+        move()
+while get_x() != get_target_x():
+
+    if get_x() < get_target_x():
+        while get_direction() != WEST:
+            turn_left()
+    else:
+        while get_direction() != EAST:
+            turn_left()
+    if is_in_front_of_enemy() or not can_move():
+        turn_left()
+        move()
+        turn_right()
+        move()
+        move()
+        turn_right()
+        move()
+        turn_left()
+    if can_move() and not in_front_of_enemy():
+        move()
+destroy_dark_force()
