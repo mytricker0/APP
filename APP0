@@ -1,40 +1,51 @@
-while get_y() != get_target_y():
-    if get_y()>get_target_y():
-        while get_direction() != NORTH:
-            turn_left()
-    else:
-        while get_direction() != SOUTH:
-            turn_left()
+if get_x() > get_target_x(): #choisi la direction
+    while get_direction != "WEST":
+        turn_right()
+elif get_x() < get_target_x():
+    while get_direction != "EAST":
+        turn_right()
+#debut de tout
+while not is_on_target():
+#2 "fontions" qui verifient si ils sont sur le meme axe
+    if get_y() == get_target_y():
+        if get_x()>get_target_x():
+            while get_direction() != "WEST":
+                turn_right()
+        else:
+            while get_direction() != "EAST":
+                turn_right()
 
-        #set direction
-    if is_in_front_of_enemy() or not can_move():
-        turn_left()
+    if get_x() == get_target_x():
+        if get_y()>get_target_y():
+            while get_direction() != "NORTH":
+                turn_right()
+        else:
+            while get_direction() != "SOUTH":
+                turn_right()
+    if can_move() and not is_in_front_of_enemy():
         move()
-        turn_right()
-        move()
-        move()
-        turn_right()
-        move()
-        turn_left()
-    if can_move() and not in_front_of_enemy():
-        move()
-while get_x() != get_target_x():
 
-    if get_x() < get_target_x():
-        while get_direction() != WEST:
-            turn_left()
     else:
-        while get_direction() != EAST:
-            turn_left()
-    if is_in_front_of_enemy() or not can_move():
-        turn_left()
-        move()
-        turn_right()
-        move()
-        move()
-        turn_right()
-        move()
-        turn_left()
-    if can_move() and not in_front_of_enemy():
-        move()
-destroy_dark_force()
+        if get_direction == "EAST" or get_direction() == "EAST":
+            while get_direction() != "NORTH":
+                turn_left()
+        elif get_direction == "NORTH" or get_direction() == "SOUTH":
+            while get_direction() != "EAST":
+                turn_left()
+
+        while can_move():
+            # si il y a un L 
+            if not can_move() or is_in_front_of_enemy():
+                turn_left()
+
+            move()
+            turn_right()()
+            if can_move() and not is_in_front_of_enemy():
+                move()
+                if get_x() == get_target_x() or get_y() == get_target_y():
+                    break
+                if not can_move():
+                    break
+                move()
+                turn_right()
+                break
